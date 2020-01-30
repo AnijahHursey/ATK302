@@ -161,9 +161,9 @@ arc(455, 530, 70, 70, 3.1, radians(0));
 //fill(0);
 //textSize(40);
   //text(mouseX.toFixed(0) + "," + mouseY);
-  fill(0) ;
-  textSize(30) ;
-  text(mouseX + ", " + mouseY, 50, 50) ;
+  //fill(0) ;
+  //textSize(30) ;
+//  text(mouseX + ", " + mouseY, 50, 50) ;
 }
 
 
