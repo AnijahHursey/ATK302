@@ -91,6 +91,8 @@ arc(455, 530, 70, 70, 3.1, radians(0));
    rect(500, 500, 1000, 1000);
     fill('blue');
    rect(500, 372.5, 1000, 345);
+   fill('black');
+   line(585, 330, 340, 545);
     fill('red');
     ellipse(455, 485, 140, 200)
     fill('black');
