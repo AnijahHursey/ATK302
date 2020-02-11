@@ -17,8 +17,12 @@ function draw() {
 }
 
 
-function draw() {
-  // put drawing code here
+function mouseReleased(){
+  if (song1.isPlaying()) {
+  song1.pause();
+ } else {
+  song1.play() ;
+ }
 }
 function touchStarted() {
   getAudioContext().resume();
