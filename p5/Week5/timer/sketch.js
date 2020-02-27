@@ -9,7 +9,7 @@ function setup() {
 function draw() {
   // put drawing code here
   //text(timer, width/2, height/2) ;
-  timer = timer - 1 ;
+  timer = timer - 1;
   if (timer <= 0) {
     background(random(256), random(256),random(256),) ;
     timer = 200 ;
