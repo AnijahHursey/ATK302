@@ -1,82 +1,564 @@
 var myState = 0;
 var timer = 0;
+var mic;
+var volume;
 
 function setup() {
   // put setup code here
   createCanvas(800, 800);
+  r = 360;
+  y = 360;
+  x = 355;
+  z = 355;
+  mic = new p5.AudioIn();
+  mic.start();
+  a = 200;
+  b = 160;
 }
 
 function draw() {
   // put drawing code here
+  push();
+  fill('black');
+  rect(400, 350, 800, 100);
   switch (myState) {
     case 0:
-      background('red');
-      text("Hello State 0!", 100, 100);
-      timer++ ;
-      if (timer > 200){
+      background('eggshell');
+      textSize(20);
+      text("Every morning, George the cat sleeps.", 230, 40);
+      fill('lightblue');
+      rect(210, 70, 100, 100);
+      fill('black');
+      rect(200, 50, 400, 400);
+      fill('tan');
+      rect(202, 51, 397, 397);
+      fill('lightblue');
+      rect(220, 70, 360, 360);
+      fill('yellow');
+      ellipse(250, 100, 40, 40);
+      fill('green');
+      rect(220, 300, 360, 130);
+      fill('black');
+      rect(395, 70, 20, 360);
+      fill('black');
+      rect(220, 250, 360, 20);
+      fill('black');
+      rect(0, 500, 800, 400);
+      fill('orange');
+      arc(430, 380, 200, 200, 3.14, radians(0));
+      fill('tan');
+      rect(0, 500, 800, 400);
+      fill('black');
+      rect(0, 300, 800, 100);
+      fill('black');
+      rect(0, 380, 40, 350);
+      fill('brown');
+      rect(0, 380, 40, 350);
+      fill('black');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(0, 305, 800, 70);
+      fill('brown');
+      rect(0, 380, 800, 25);
+      fill('orange');
+      arc(360, y, 300, 170, 3.14, radians(0));
+      fill('orange');
+      arc(420, 360, 180, 190, 3.14, radians(0));
+      fill('orange');
+      ellipse(320, 380, 40, 70);
+      fill('white');
+      arc(320, 390, 40, 50, 0, radians(180));
+      fill('orange');
+      arc(410, 360, 180, 150, 3, radians(220));
+      fill('orange');
+      arc(230, 375, 100, 50, 3.14, radians(0));
+      fill('white');
+      arc(220, 375, 50, 50, 3.14, radians(0));
+      fill('orange');
+      arc(423, 360, 180, 30, 270, radians(180));
+      fill('orange');
+      ellipse(270, 350, 100, 100);
+      fill('white');
+      ellipse(355, 370, 80, 30);
+      fill('orange');
+      ellipse(495, 390, 50, 100);
+      fill('white');
+      arc(495, 390, 50, 100, 0, radians(180));
+      fill('orange');
+      arc(270, 340, 100, 290, 3.14, radians(220));
+      fill('orange');
+      arc(265, 330, 100, 130, 175, radians(0));
+      fill('white');
+      arc(270, 354, 100, 90, 0.5, radians(120));
+      fill('pink');
+      ellipse(370, 370, 40, 25);
+      fill('pink');
+      ellipse(330, 370, 20, 10);
+      fill('pink');
+      ellipse(340, 360, 20, 10);
+      fill('pink');
+      ellipse(340, 380, 20, 10);
+      fill('pink');
+      arc(271, 355, 23, 15, 6, radians(180));
+      fill('orange');
+      arc(230, 350, 60, 10, 100, radians(0));
+      fill('orange');
+      arc(310, 348, 60, 10, 3.1, radians(230));
+      fill('white');
+      arc(270, 370, 10, 10, 0, radians(160));
+      fill('white');
+      arc(280, 370, 10, 10, 0, radians(180));
+
+      pop();
+      vol = mic.getLevel();
+      vol = vol * 100;
+      if (vol > 60) {
+        myState = 4;
+      }
+      timer++;
+      if (timer > 48) {
         myState = 1;
         timer = 0;
+      }
+      y = y - 0.1;
+      if (y < 355) {
+        y = 360;
+        redraw(192);
       }
 
       break;
 
     case 1:
-      background('blue');
-      text("Hello State 1!", 100, 100);
-      timer++ ;
-      if (timer > 200){
+      background('eggshell');
+      textSize(20);
+      text("Phil, George's owner must get ready for work", 200, 40);
+      fill('lightblue');
+      rect(210, 70, 100, 100);
+      fill('black');
+      rect(200, 50, 400, 400);
+      fill('tan');
+      rect(202, 51, 397, 397);
+      fill('lightblue');
+      rect(220, 70, 360, 360);
+      fill('green');
+      rect(220, 300, 360, 130);
+      fill('black');
+      rect(395, 70, 20, 360);
+      fill('black');
+      rect(220, 250, 360, 20);
+      fill('black');
+      rect(0, 500, 800, 400);
+      fill('yellow');
+      ellipse(250, 100, 40, 40);
+      fill('orange');
+      arc(430, 380, 200, 200, 3.14, radians(0));
+      fill('tan');
+      rect(0, 500, 800, 400);
+      fill('black');
+      rect(0, 300, 800, 100);
+      fill('black');
+      rect(0, 380, 40, 350);
+      fill('brown');
+      rect(0, 380, 40, 350);
+      fill('black');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(0, 305, 800, 70);
+      fill('brown');
+      rect(0, 380, 800, 25);
+      fill('orange');
+      arc(360, x, 300, 170, 3.14, radians(0));
+      fill('orange');
+      arc(420, 360, 180, 190, 3.14, radians(0));
+      fill('orange');
+      ellipse(320, 380, 40, 70);
+      fill('white');
+      arc(320, 390, 40, 50, 0, radians(180));
+      fill('orange');
+      arc(410, 360, 180, 150, 3, radians(220));
+      fill('orange');
+      arc(230, 375, 100, 50, 3.14, radians(0));
+      fill('white');
+      arc(220, 375, 50, 50, 3.14, radians(0));
+      fill('orange');
+      arc(423, 360, 180, 30, 270, radians(180));
+      fill('orange');
+      ellipse(270, 350, 100, 100);
+      fill('white');
+      ellipse(355, 370, 80, 30);
+      fill('orange');
+      ellipse(495, 390, 50, 100);
+      fill('white');
+      arc(495, 390, 50, 100, 0, radians(180));
+      fill('orange');
+      arc(270, 340, 100, 290, 3.14, radians(220));
+      fill('orange');
+      arc(265, 330, 100, 130, 175, radians(0));
+      fill('white');
+      arc(270, 354, 100, 90, 0.5, radians(120));
+      fill('pink');
+      ellipse(370, 370, 40, 25);
+      fill('pink');
+      ellipse(330, 370, 20, 10);
+      fill('pink');
+      ellipse(340, 360, 20, 10);
+      fill('pink');
+      ellipse(340, 380, 20, 10);
+      fill('pink');
+      arc(271, 355, 23, 15, 6, radians(180));
+      fill('orange');
+      arc(230, 350, 60, 10, 100, radians(0));
+      fill('orange');
+      arc(310, 348, 60, 10, 3.1, radians(230));
+      fill('white');
+      arc(270, 370, 10, 10, 0, radians(160));
+      fill('white');
+      arc(280, 370, 10, 10, 0, radians(180));
+
+      pop();
+      vol = mic.getLevel();
+      vol = vol * 100;
+      if (vol > 60) {
+        myState = 4;
+      }
+      timer++;
+      if (timer > 48) {
         myState = 2;
         timer = 0;
       }
       break;
 
     case 2:
-      background('green');
-      text("Hello State 2!", 100, 100);
-        timer++ ;
-      if (timer > 200){
+      background('eggshell');
+      textSize(20);
+      text("So he must keep quiet and don't wake up George.", 190, 40);
+      fill('lightblue');
+      rect(210, 70, 100, 100);
+      fill('black');
+      rect(200, 50, 400, 400);
+      fill('tan');
+      rect(202, 51, 397, 397);
+      fill('lightblue');
+      rect(220, 70, 360, 360);
+      fill('green');
+      rect(220, 300, 360, 130);
+      fill('black');
+      rect(395, 70, 20, 360);
+      fill('black');
+      rect(220, 250, 360, 20);
+      fill('black');
+      rect(0, 500, 800, 400);
+      fill('yellow');
+      ellipse(250, 100, 40, 40);
+      fill('orange');
+      arc(430, 380, 200, 200, 3.14, radians(0));
+      fill('tan');
+      rect(0, 500, 800, 400);
+      fill('black');
+      rect(0, 300, 800, 100);
+      fill('black');
+      rect(0, 380, 40, 350);
+      fill('brown');
+      rect(0, 380, 40, 350);
+      fill('black');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(0, 305, 800, 70);
+      fill('brown');
+      rect(0, 380, 800, 25);
+      fill('orange');
+      arc(360, z, 300, 170, 3.14, radians(0));
+      fill('orange');
+      arc(420, 360, 180, 190, 3.14, radians(0));
+      fill('orange');
+      ellipse(320, 380, 40, 70);
+      fill('white');
+      arc(320, 390, 40, 50, 0, radians(180));
+      fill('orange');
+      arc(410, 360, 180, 150, 3, radians(220));
+      fill('orange');
+      arc(230, 375, 100, 50, 3.14, radians(0));
+      fill('white');
+      arc(220, 375, 50, 50, 3.14, radians(0));
+      fill('orange');
+      arc(423, 360, 180, 30, 270, radians(180));
+      fill('orange');
+      ellipse(270, 350, 100, 100);
+      fill('white');
+      ellipse(355, 370, 80, 30);
+      fill('orange');
+      ellipse(495, 390, 50, 100);
+      fill('white');
+      arc(495, 390, 50, 100, 0, radians(180));
+      fill('orange');
+      arc(270, 340, 100, 290, 3.14, radians(220));
+      fill('orange');
+      arc(265, 330, 100, 130, 175, radians(0));
+      fill('white');
+      arc(270, 354, 100, 90, 0.5, radians(120));
+      fill('pink');
+      ellipse(370, 370, 40, 25);
+      fill('pink');
+      ellipse(330, 370, 20, 10);
+      fill('pink');
+      ellipse(340, 360, 20, 10);
+      fill('pink');
+      ellipse(340, 380, 20, 10);
+      fill('pink');
+      arc(271, 355, 23, 15, 6, radians(180));
+      fill('orange');
+      arc(230, 350, 60, 10, 100, radians(0));
+      fill('orange');
+      arc(310, 348, 60, 10, 3.1, radians(230));
+      fill('white');
+      arc(270, 370, 10, 10, 0, radians(160));
+      fill('white');
+      arc(280, 370, 10, 10, 0, radians(180));
+
+      pop();
+      vol = mic.getLevel();
+      vol = vol * 100;
+      if (vol > 60) {
+        myState = 4;
+      }
+      timer++;
+      if (timer > 48) {
         myState = 3;
         timer = 0;
       }
-      break;
+      z = z + 0.1;
+      if (z >= 360) {
+        z = 355
+        redraw(192);
+      }
 
+      break;
     case 3:
-      background('yellow');
-      text("Hello State 3!", 100, 100);
-        timer++ ;
-      if (timer > 200){
+      background('eggshell');
+      textSize(20);
+      text("Keep quiet and don't wake up the cat, Phil.", 230, 40);
+      fill('lightblue');
+      rect(210, 70, 100, 100);
+      fill('black');
+      rect(200, 50, 400, 400);
+      fill('tan');
+      rect(202, 51, 397, 397);
+      fill('lightblue');
+      rect(220, 70, 360, 360);
+      fill('green');
+      rect(220, 300, 360, 130);
+      fill('black');
+      rect(395, 70, 20, 360);
+      fill('black');
+      rect(220, 250, 360, 20);
+      fill('black');
+      rect(0, 500, 800, 400);
+      fill('yellow');
+      ellipse(250, 100, 40, 40);
+      fill('orange');
+      arc(430, 380, 200, 200, 3.14, radians(0));
+      fill('tan');
+      rect(0, 500, 800, 400);
+      fill('black');
+      rect(0, 300, 800, 100);
+      fill('black');
+      rect(0, 380, 40, 350);
+      fill('brown');
+      rect(0, 380, 40, 350);
+      fill('black');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(0, 305, 800, 70);
+      fill('brown');
+      rect(0, 380, 800, 25);
+      fill('orange');
+      arc(360, r, 300, 170, 3.14, radians(0));
+      fill('orange');
+      arc(420, 360, 180, 190, 3.14, radians(0));
+      fill('orange');
+      ellipse(320, 380, 40, 70);
+      fill('white');
+      arc(320, 390, 40, 50, 0, radians(180));
+      fill('orange');
+      arc(410, 360, 180, 150, 3, radians(220));
+      fill('orange');
+      arc(230, 375, 100, 50, 3.14, radians(0));
+      fill('white');
+      arc(220, 375, 50, 50, 3.14, radians(0));
+      fill('orange');
+      arc(423, 360, 180, 30, 270, radians(180));
+      fill('orange');
+      ellipse(270, 350, 100, 100);
+      fill('white');
+      ellipse(355, 370, 80, 30);
+      fill('orange');
+      ellipse(495, 390, 50, 100);
+      fill('white');
+      arc(495, 390, 50, 100, 0, radians(180));
+      fill('orange');
+      arc(270, 340, 100, 290, 3.14, radians(220));
+      fill('orange');
+      arc(265, 330, 100, 130, 175, radians(0));
+      fill('white');
+      arc(270, 354, 100, 90, 0.5, radians(120));
+      fill('pink');
+      ellipse(370, 370, 40, 25);
+      fill('pink');
+      ellipse(330, 370, 20, 10);
+      fill('pink');
+      ellipse(340, 360, 20, 10);
+      fill('pink');
+      ellipse(340, 380, 20, 10);
+      fill('pink');
+      arc(271, 355, 23, 15, 6, radians(180));
+      fill('orange');
+      arc(230, 350, 60, 10, 100, radians(0));
+      fill('orange');
+      arc(310, 348, 60, 10, 3.1, radians(230));
+      fill('white');
+      arc(270, 370, 10, 10, 0, radians(160));
+      fill('white');
+      arc(280, 370, 10, 10, 0, radians(180));
+
+      pop();
+      vol = mic.getLevel();
+      vol = vol * 100;
+      if (vol > 60) {
+        myState = 4;
+      }
+      timer++;
+      if (timer > 48) {
         myState = 4;
         timer = 0;
       }
       break;
-
     case 4:
-      background('orange');
-      text("Hello State 4!", 100, 100);
-      timer++ ;
-    if (timer > 200){
-      myState = 5;
-      timer = 0;
-    }
+      background('eggshell');
+      textSize(20);
+      text("Uh Oh...", 230, 40);
+      fill('lightblue');
+      rect(210, 70, 100, 100);
+      fill('black');
+      rect(200, 50, 400, 400);
+      fill('tan');
+      rect(202, 51, 397, 397);
+      fill('lightblue');
+      rect(220, 70, 360, 360);
+      fill('green');
+      rect(220, 300, 360, 130);
+      fill('black');
+      rect(395, 70, 20, 360);
+      fill('black');
+      rect(220, 250, 360, 20);
+      fill('black');
+      rect(0, 500, 800, 400);
+      fill('yellow');
+      ellipse(250, 100, 40, 40);
+      fill('orange');
+      arc(430, 380, 200, 200, 3.14, radians(0));
+      fill('tan');
+      rect(0, 500, 800, 400);
+      fill('black');
+      rect(0, 300, 800, 100);
+      fill('black');
+      rect(0, 380, 40, 350);
+      fill('brown');
+      rect(0, 380, 40, 350);
+      fill('black');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(760, 380, 40, 350);
+      fill('brown');
+      rect(0, 305, 800, 70);
+      fill('brown');
+      rect(0, 380, 800, 25);
+      fill('orange');
+      arc(360, r, 300, 170, 3.14, radians(0));
+      fill('orange');
+      arc(420, 360, 180, 190, 3.14, radians(0));
+      fill('orange');
+      ellipse(320, 380, 40, 70);
+      fill('white');
+      arc(320, 390, 40, 50, 0, radians(180));
+      fill('orange');
+      arc(410, 360, 180, 150, 3, radians(220));
+      fill('orange');
+      arc(230, 375, 100, 50, 3.14, radians(0));
+      fill('white');
+      arc(220, 375, 50, 50, 3.14, radians(0));
+      fill('orange');
+      arc(423, 360, 180, 30, 270, radians(180));
+      fill('orange');
+      ellipse(270, 350, 100, 100);
+      fill('white');
+      ellipse(355, 370, 80, 30);
+      fill('orange');
+      ellipse(495, 390, 50, 100);
+      fill('white');
+      arc(495, 390, 50, 100, 0, radians(180));
+      fill('orange');
+      arc(270, 340, 100, 290, 3.14, radians(220));
+      fill('orange');
+      arc(265, 330, 100, 130, 175, radians(0));
+      fill('white');
+      arc(270, 354, 100, 90, 0.5, radians(120));
+      fill('pink');
+      ellipse(370, 370, 40, 25);
+      fill('pink');
+      ellipse(330, 370, 20, 10);
+      fill('pink');
+      ellipse(340, 360, 20, 10);
+      fill('pink');
+      ellipse(340, 380, 20, 10);
+      fill('pink');
+      arc(271, 355, 23, 15, 6, radians(180));
+      fill('white');
+      ellipse(250, 350, 20, 10);
+      fill('black');
+      ellipse(250, 350, 2, 10);
+      fill('white');
+      ellipse(295, 348, 22, 10);
+      fill('black');
+      ellipse(295, 348, 2, 10);
+      fill('white');
+      arc(270, 370, 10, 10, 0, radians(160));
+      fill('white');
+      arc(280, 370, 10, 10, 0, radians(180));
+
+      pop();
+      vol = mic.getLevel();
+      vol = vol * 100;
+      if (vol > 60) {
+        myState = 4;
+      }
+      timer++;
+      if (timer > 48) {
+        myState = 0;
+        timer = 0;
+      }
       break;
-
-    case 5:
-      background('purple');
-      text("Hello State 5!", 100, 100);
-      timer++ ;
-    if (timer > 200){
-      myState = 0;
-      timer = 0;
-    }
-      break;
-
   }
+  fill('#ffa86e');
+  rect(b, 480, 80, 70);
+  fill('#ffa86e');
+  ellipse(a, 400, 200, 200);
+  fill('black');
+  ellipse(a, 750, 200, 500);
 
-}
+  a = a + 1.5;
+  b = b + 1.5;
+  if (a > 550) {
+    a = 200;
+    b = 160;
+    redraw(240);
+ }
 
-function mouseReleased() {
-  myState = myState + 1;
-  if (myState > 5) {
-    myState = 0;
-  }
 }
