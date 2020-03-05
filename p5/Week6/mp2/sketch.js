@@ -24,8 +24,8 @@ function draw() {
   switch (myState) {
     case 0:
       background('eggshell');
-      textSize(20);
-      text("Every morning, George the cat sleeps.", 230, 40);
+      textSize(10);
+      text("Every morning, George the cat sleeps. Phil, George's owner must get ready for work, So he must keep quiet and don't wake up George. Keep quiet and don't wake up the cat, Phil.", 5, 40);
       fill('lightblue');
       rect(210, 70, 100, 100);
       fill('black');
@@ -132,8 +132,8 @@ function draw() {
 
     case 1:
       background('eggshell');
-      textSize(20);
-      text("Phil, George's owner must get ready for work", 200, 40);
+      textSize(10);
+      text("Every morning, George the cat sleeps. Phil, George's owner must get ready for work, So he must keep quiet and don't wake up George. Keep quiet and don't wake up the cat, Phil.", 5, 40);
       fill('lightblue');
       rect(210, 70, 100, 100);
       fill('black');
@@ -234,8 +234,8 @@ function draw() {
 
     case 2:
       background('eggshell');
-      textSize(20);
-      text("So he must keep quiet and don't wake up George.", 190, 40);
+      textSize(10);
+      text("Every morning, George the cat sleeps. Phil, George's owner must get ready for work, So he must keep quiet and don't wake up George. Keep quiet and don't wake up the cat, Phil.", 5, 40);
       fill('lightblue');
       rect(210, 70, 100, 100);
       fill('black');
@@ -341,8 +341,8 @@ function draw() {
       break;
     case 3:
       background('eggshell');
-      textSize(20);
-      text("Keep quiet and don't wake up the cat, Phil.", 230, 40);
+      textSize(10);
+      text("Every morning, George the cat sleeps. Phil, George's owner must get ready for work, So he must keep quiet and don't wake up George. Keep quiet and don't wake up the cat, Phil.", 5, 40);
       fill('lightblue');
       rect(210, 70, 100, 100);
       fill('black');
