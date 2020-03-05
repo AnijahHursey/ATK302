@@ -553,8 +553,8 @@ function draw() {
   fill('black');
   ellipse(a, 750, 200, 500);
 
-  a = a + 1.5;
-  b = b + 1.5;
+  a = a + 1.3;
+  b = b + 1.3;
   if (a > 550) {
     a = 200;
     b = 160;
