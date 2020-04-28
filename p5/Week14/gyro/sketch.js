@@ -1,5 +1,5 @@
-<html><head></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">/* For mobile phones - accesses accelerometer.
-Make sure you turn on orientation lock on your iPhone or Android device. */
+< html > < head > < /head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">/ * For mobile phones - accesses accelerometer.
+Make sure you turn on orientation lock on your iPhone or Android device.*/
 
 var alpha, beta, gamma; // orientation data
 var bunnyImage;
@@ -18,7 +18,7 @@ function setup() {
   beta = 0;
   gamma = 0;
 
-  bunnyImage = loadImage("assets/bunny.jpg");
+  bunnyImage = loadImage("assets/dogs.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -87,5 +87,5 @@ window.addEventListener('devicemotion', function(e) {
   x = e.acceleration.x;
   y = e.acceleration.y;
   z = e.acceleration.z;
-});
-</pre></body></html> 
+}); <
+/pre></body > < /html>
