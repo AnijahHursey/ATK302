@@ -65,7 +65,7 @@ function draw() {
   // MORE DECORATIONS - write that pretty ATK type on top.
   fill('black');
   noStroke();
-  textSize(50);
+  textSize(30);
   textAlign(CENTER);
   text("This a the definition of a Good Boy", width / 2, height / 2);
 
