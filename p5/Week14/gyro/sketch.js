@@ -1,5 +1,5 @@
-//< html > < head > < /head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">/ * For mobile phones - accesses accelerometer.
-//Make sure you turn on orientation lock on your iPhone or Android device.*/
+/* For mobile phones - accesses accelerometer.
+Make sure you turn on orientation lock on your iPhone or Android device. */
 
 var alpha, beta, gamma; // orientation data
 var bunnyImage;
@@ -26,7 +26,7 @@ function setup() {
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
+  background('white'); // light blue
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -47,27 +47,27 @@ function draw() {
 
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y.toFixed(2), 25, 170);
-  text("z = " + z.toFixed(4), 25, 190);
+//  textAlign(LEFT);
+//  textSize(20);
+//  fill('black');
+//  text("orientation data:", 25, 25);
+//  textSize(15);
+//  text("alpha: " + alpha, 25, 50);
+//  text("beta: " + beta, 25, 70);
+//  text("gamma: " + gamma, 25, 90);
+//  textSize(20);
+//  text("acceleration data:", 25, 125);
+//  textSize(15);
+//  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+//  text("y = " + y.toFixed(2), 25, 170);
+//  text("z = " + z.toFixed(4), 25, 190);
 
   // MORE DECORATIONS - write that pretty ATK type on top.
-  fill('white');
+  fill('black');
   noStroke();
-  textSize(300);
+  textSize(50);
   textAlign(CENTER);
-  text("atk", width / 2, height / 2);
+  text("This a the definition of a Good Boy", width / 2, height / 2);
 
 }
 
@@ -88,4 +88,3 @@ window.addEventListener('devicemotion', function(e) {
   y = e.acceleration.y;
   z = e.acceleration.z;
 });
-//</pre></body ></html/>
