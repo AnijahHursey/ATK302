@@ -44,13 +44,13 @@ function draw() {
     case 1:
     background('lightblue') ;
     fill('yellow');
-    ellipse(50, 30, 50, 50);
+    ellipse(50, 100, 50, 50);
     fill('black');
-    text("we have weather", 20, 20) ;
+    text("we have weather", 20, 220) ;
 // parse the weather object and put some text or images using at least 3 different weather data!
-text('The temperature is ' + weather.main.temp, 20, 40);
-text('The Humidity is ' + weather.main.humidity, 20, 60);
-text('The Windspeed is ' + weather.wind.speed, 20, 80);
+text('The temperature is ' + weather.main.temp, 20, 240);
+text('The Humidity is ' + weather.main.humidity, 20, 260);
+text('The Windspeed is ' + weather.wind.speed, 20, 280);
 
 var color = 0;
 color = map(hum, 0, 200, 2, height-10);
@@ -64,26 +64,32 @@ fill(color);
 ellipse(c, 115, 80, 40);
 fill(color);
 ellipse(d, 120, 60, 30);
-a = a + ws/2;
+a = a + ws/16;
 if (a > width) a = 0 ;
-b = b + ws/2;
+b = b + ws/16;
 if (b > width) b = 0 ;
-c = c + ws/2;
+c = c + ws/16;
 if (c > width) c = 0 ;
-d = d + ws/2;
+d = d + ws/16;
 if (d > width) d = 0 ;
 
 fill('green');
 rect(0, 300, 400, 100);
+fill('black');
+rect(width-43, height-15, 35, -300);
+fill('black');
+ellipse(width-25.7, 85, 35, 35);
+fill('black');
+ellipse(width-25, height-25, 45, 45);
+fill('red');
+ellipse(width-25, height-25, 40, 40);
 
-fill('white');
-rect(width-45, height-5, 40, -200);
-fill('white');
-ellipse(width-25, height/2, 40, -390);
+
+
 fill('red');
 var temperature = 0;
-temperature = map(temp, -10, 90, 2, height-10) ;
-rect(width-40, height-10, 30, -temp) ;
+temperature = map(temp, -10, 200, 5, height-10) ;
+rect(width-40, height-10, 30, -temp*3) ;
 
 
       break;
