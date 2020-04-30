@@ -21,7 +21,6 @@ function setup() {
   num = 0;
   intervalCurrentPosition(positionPing, 5000);
 
-  places.push(new Place(40.6331, -89.3985, "Illinois", .02, reggieImg));
   places.push(new Place(41.55744440, -88.21689320, "Anijah's Room", .02, reggieImg));
 
   places.push(new Place(40.47859881213726, -88.96815846900026, "Rose's Room", .02, reggieImg)); // new Place object, for CVA room 17
